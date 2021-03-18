@@ -22,7 +22,7 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <scope>provided </scope>
         </dependency>
-        <!--swagger-->
+<!--        swagger-->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
