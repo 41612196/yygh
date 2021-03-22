@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Api(tags = "数据字典")
-@CrossOrigin//跨域访问
 @RestController
 @RequestMapping("/admin/cmn/dict")
+@CrossOrigin//跨域访问
 public class DictController {
     @Autowired
     private DictService dictService;
