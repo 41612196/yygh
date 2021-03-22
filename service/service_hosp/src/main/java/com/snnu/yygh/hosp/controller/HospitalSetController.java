@@ -20,6 +20,7 @@ import java.util.Random;
 @Api(tags = "医院设置管理")
 @RestController
 @RequestMapping("/admin/hosp/hospitalSet")
+@CrossOrigin//跨域访问
 public class HospitalSetController {
     @Autowired
     private HospitalSetService hospitalSetService;
@@ -48,8 +49,11 @@ public class HospitalSetController {
                                   @RequestBody(required = false) HospitalSetQueryVo hospitalSetQueryVo) {
         Page<HospitalSet> page = new Page<>(current, limit);
         QueryWrapper<HospitalSet> wrapper = new QueryWrapper<>();
+
         String hosname = hospitalSetQueryVo.getHosname();
         String hoscode = hospitalSetQueryVo.getHoscode();
+
+
         if (!StringUtils.isEmpty(hosname)) {
             wrapper.like("hosname", hospitalSetQueryVo.getHosname());
         }
@@ -57,6 +61,7 @@ public class HospitalSetController {
             wrapper.eq("hoscode", hospitalSetQueryVo.getHoscode());
         }
         Page<HospitalSet> pageHospitalSet = hospitalSetService.page(page, wrapper);
+//        System.out.println(Result.ok(pageHospitalSet));
         return Result.ok(pageHospitalSet);
     }
 
