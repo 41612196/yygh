@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.snnu.yygh.model.cmn.Dict;
 
 import java.util.List;
-//vv
+//vvddd
 public interface DictService extends IService<Dict> {
     List<Dict> findChlidData(Long id);
 }
