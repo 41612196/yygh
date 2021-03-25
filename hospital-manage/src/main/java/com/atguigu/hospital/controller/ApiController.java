@@ -42,6 +42,7 @@ public class ApiController extends BaseController {
 
 	@RequestMapping(value="/hospitalSet/save")
 	public String createHospitalSet(ModelMap model,HospitalSet hospitalSet) {
+		System.out.println("hospitalSet:"+hospitalSet);
 		hospitalSetMapper.updateById(hospitalSet);
 		return "redirect:/hospitalSet/index";
 	}
